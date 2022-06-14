@@ -35,7 +35,7 @@ print(banner)
 domain = input("Enter Domain or IP: ")
 os.system('clear')
 print(banner)
-print("Enumerating Subdomains:"
+print("Enumerating Subdomains for {}:".format(domain))
 subDomains = sublist3r.main(domain, 10, '{}_SubDomains.txt'.format(domain), ports=None, silent=False, verbose=False, enable_bruteforce=False, engines=None)
 #read subdomains file line by line, do some cleaning and get it ready for further processing
 myFile1 = open('{}_SubDomains.txt'.format(domain), 'w')
