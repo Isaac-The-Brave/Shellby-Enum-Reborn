@@ -31,7 +31,11 @@ S:::::::::::::::SS  h:::::h     h:::::h  ee:::::::::::::e l::::::ll::::::lb:::::
 """
 
 
+print(banner)
 domain = input("Enter Domain or IP: ")
+os.system('clear')
+print(banner)
+print("Enumerating Subdomains:"
 subDomains = sublist3r.main(domain, 10, '{}_SubDomains.txt'.format(domain), ports=None, silent=False, verbose=False, enable_bruteforce=False, engines=None)
 #read subdomains file line by line, do some cleaning and get it ready for further processing
 myFile1 = open('{}_SubDomains.txt'.format(domain), 'w')
@@ -102,8 +106,8 @@ isExist = os.path.exists('VulnLinks')
 if not isExist:
   os.makedirs('VulnLinks')
 
-os.system("cat {}_crawled.txt | grep '{}' | gf urls | grep -v ']' | qsreplace -a | sort -u | gf xss >> VulnLinks/{}_xss_VulnLinks.txt".format(domain,domain,domain))
-os.system("cat {}_crawled.txt | grep '{}' | gf urls | grep -v ']' | qsreplace -a | sort -u | gf sqli >> VulnLinks/{}_sqli_VulnLinks.txt".format(domain,domain,domain))
+os.system("cat {}_crawled.txt | gf urls | grep '{}' | grep -v ']' | qsreplace -a | sort -u | gf xss >> VulnLinks/{}_xss_VulnLinks.txt".format(domain,domain,domain))
+os.system("cat {}_crawled.txt | gf urls | grep '{}' | grep -v ']' | qsreplace -a | sort -u | gf sqli >> VulnLinks/{}_sqli_VulnLinks.txt".format(domain,domain,domain))
 
 os.remove('{}_httpSubDomains.txt'.format(domain))
 os.system("clear")
