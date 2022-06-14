@@ -5,4 +5,8 @@ A lot of people to credit for their great and fast software, I will do so soon, 
 
 If you do decide to try and adopt this script to use yourself, BE WEARY OF THE INSTALL SCRIPT! It will upgrade your system. I'm sure many aren't interested in doing that to just run this software. Further more, you'll have to work out some of the installation directories on your own, but the script is commented and should give you the requirements to run it! Good luck.
 
-##Fanks
+###Usage
+python3 Main.py domain.ex
+
+##Make sure you install all the required packages in:
+###Both: requirements.txt and install.sh
